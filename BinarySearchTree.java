@@ -1,8 +1,9 @@
+//Super basic BST meant for holding a Letter and associated Morse Code string
 package mypackage;
 
 public class BinarySearchTree {
 	
-	class Node
+	class Node //Node class to handle nodes of BST
 	{
 		char key;
 		String code;
@@ -34,7 +35,7 @@ public class BinarySearchTree {
 		root = insertRec(root, k, c);
 	}
 	
-	Node insertRec(Node root, char k, String c)
+	Node insertRec(Node root, char k, String c) // recursive insertion of letter key and code string
 	{
 		if (root == null)
 		{
@@ -72,14 +73,14 @@ public class BinarySearchTree {
 		translate(root, c);
 		
 	}
-	void translate(Node root, String c)
+	void translate(Node root, String c) //gets letter from morse code string
 	{
 		if (root != null)
 		{
 			translate(root.left, c);
 			if (root.code.compareTo(c) == 0)
 			{
-				int tmp = (int) root.key;
+				int tmp = (int) root.key; //Capitalize the letter key
 				tmp = tmp - 32;
 				char ch = (char) tmp;
 				System.out.print(ch);
