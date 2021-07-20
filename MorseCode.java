@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 public class MorseCode {
 
-	static BinarySearchTree tree = new BinarySearchTree();
+	static BinarySearchTree tree = new BinarySearchTree(); //global tree
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
 		System.out.println("Populating Morse Code BST");
 		
@@ -41,9 +40,8 @@ public class MorseCode {
 		tree.insert(' ', " ");
 		
 		
-		//tree.inOrder();
 		
-		System.out.print("English to Morse (1) or Morse to English (2)? ");
+		System.out.print("English to Morse (1) or Morse to English (2)? "); //Maybe I'll make this automatically detect E2M or M2E
 		int choice = input.nextInt();
 		input.nextLine();
 		String userInput;
@@ -92,20 +90,10 @@ public class MorseCode {
 			}
 			else
 			{
-				///System.out.println(group);
 				tree.translate(group);
 				group = "";
 			}
 		}
 		tree.translate(group);
-		/*
-		System.out.print(tree.search(tree.root, s.charAt(0)).getCode());
-		
-		for (int i = 1; i < s.length(); i++)
-		{
-			System.out.print("/");
-			System.out.print(tree.search(tree.root, s.charAt(i)).getCode());
-		}
-		*/
 	}
 }
